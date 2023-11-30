@@ -1,9 +1,6 @@
 <script setup lang="ts">
-const story = await useStoryblok('home', { version: 'draft'})
+const story = await useStoryblok("home", { version: "draft" });
 </script>
 <template>
-  <div>
-    <!-- <NuxtPage /> -->
-    {{ story }}
-  </div>
+  <StoryblokComponent v-if="story" :blok="story.content"></StoryblokComponent>
 </template>
